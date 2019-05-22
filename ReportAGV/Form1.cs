@@ -149,19 +149,27 @@ namespace ReportAGV
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            String path = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "OrderItemInProc.txt");
-            String[] lines = File.ReadAllLines(path);
-            List<OrderItem> orderlist = new List<OrderItem>();
-            foreach(String strj in lines)
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "All Files (*.*)|*.*";
+            if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                OrderItem order = JsonConvert.DeserializeObject<OrderItem>(strj);
-                orderlist.Add(order);
+                string path = fileDialog.FileName;
+                String[] lines = File.ReadAllLines(path);
+                List<OrderItem> orderlist = new List<OrderItem>();
+                foreach (String strj in lines)
+                {
+                    OrderItem order = JsonConvert.DeserializeObject<OrderItem>(strj);
+                    orderlist.Add(order);
+                }
+                dataGridViewReport.DataSource = orderlist;
+
             }
-            dataGridViewReport.DataSource = orderlist;
+           
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
+          
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "XLS files (*.xls)|*.xls|XLT files (*.xlt)|*.xlt|XLSX files (*.xlsx)|*.xlsx|XLSM files (*.xlsm)|*.xlsm|XLTX (*.xltx)|*.xltx|XLTM (*.xltm)|*.xltm|ODS (*.ods)|*.ods|OTS (*.ots)|*.ots|CSV (*.csv)|*.csv|TSV (*.tsv)|*.tsv|HTML (*.html)|*.html|MHTML (.mhtml)|*.mhtml|PDF (*.pdf)|*.pdf|XPS (*.xps)|*.xps|BMP (*.bmp)|*.bmp|GIF (*.gif)|*.gif|JPEG (*.jpg)|*.jpg|PNG (*.png)|*.png|TIFF (*.tif)|*.tif|WMP (*.wdp)|*.wdp";
             saveFileDialog.FilterIndex = 3;
@@ -176,6 +184,11 @@ namespace ReportAGV
 
                 workbook.Save(saveFileDialog.FileName);
             }
+        }
+
+        private void DataGridViewReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
     
