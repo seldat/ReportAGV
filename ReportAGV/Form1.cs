@@ -161,6 +161,7 @@ namespace ReportAGV
                     OrderItem order = JsonConvert.DeserializeObject<OrderItem>(strj);
                     orderlist.Add(order);
                 }
+                dataGridViewReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dataGridViewReport.DataSource = orderlist;
 
             }

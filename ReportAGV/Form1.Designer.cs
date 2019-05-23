@@ -37,18 +37,20 @@
             // dataGridViewReport
             // 
             this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReport.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewReport.Location = new System.Drawing.Point(9, 8);
+            this.dataGridViewReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewReport.Name = "dataGridViewReport";
             this.dataGridViewReport.RowTemplate.Height = 24;
-            this.dataGridViewReport.Size = new System.Drawing.Size(839, 582);
+            this.dataGridViewReport.Size = new System.Drawing.Size(1166, 663);
             this.dataGridViewReport.TabIndex = 2;
             this.dataGridViewReport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewReport_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(687, 600);
+            this.button1.Location = new System.Drawing.Point(1051, 675);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 3;
             this.button1.Text = "Load";
             this.button1.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(779, 600);
+            this.button2.Location = new System.Drawing.Point(1120, 675);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(56, 19);
             this.button2.TabIndex = 4;
             this.button2.Text = "Export";
             this.button2.UseVisualStyleBackColor = true;
@@ -66,13 +69,18 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 659);
+            this.ClientSize = new System.Drawing.Size(1186, 705);
+            this.Controls.Add(this.dataGridViewReport);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridViewReport);
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).EndInit();
             this.ResumeLayout(false);
